@@ -1,13 +1,15 @@
 require 'httparty'
 require 'pry'
-require './wolfram_alpha_class'
+require './distance_class.rb'
 
-paris = WolframAlphaClass.find_distance("paris to berlin")
+location = gets.chomp
+paris = DistanceClass.find_distance("#{location} to berlin")
 
-madrid = WolframAlphaClass.find_distance("madrid to berlin")
+madrid = DistanceClass.find_distance("madrid to berlin")
 
 puts paris.to_s
 puts madrid.to_s
+
 
 
 

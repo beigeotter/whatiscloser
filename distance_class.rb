@@ -2,7 +2,7 @@ require 'httparty'
 require 'pry'
 require 'uri'
 
-class WolframAlphaClass
+class DistanceClass
   attr_reader :distance, :title
 
   def self.find_distance(keyword, api_key = ENV['WA_APPID'])
@@ -12,7 +12,7 @@ class WolframAlphaClass
     distance = response["queryresult"]["pod"][1]["subpod"]["plaintext"] 
     title = response["queryresult"]["pod"][0]["subpod"]["plaintext"]
 
-    WolframAlphaClass.new(title, distance)
+    DistanceClass.new(title, distance)
   end
 
   def initialize(title, distance)
