@@ -16,8 +16,10 @@ locations = DataCenterClass.distances_to_measure_method(location, DataCenterClas
 
 puts locations
 
+distance_to_each_datacenter = []
+
 locations.each do |l|
-  puts DistanceClass.find_distance(l)
+  distance_to_each_datacenter.push(DistanceClass.find_distance(l))
 end
 
 

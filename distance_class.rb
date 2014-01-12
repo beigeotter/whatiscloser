@@ -30,7 +30,8 @@ class DistanceClass
   end
 
   def to_s
-    puts "#{title} is #{distance} away"
+    #puts "#{title} is #{distance} away"
+    distance
   end
 end
 
