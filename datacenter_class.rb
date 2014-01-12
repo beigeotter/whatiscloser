@@ -38,18 +38,19 @@ DATACENTERS_LOCATIONS = {
   doams2: { address: 'Amsterdam, The Netherlands', ip: 'speedtest-ams2.digitalocean.com' },
 }
 #Methods
-distances_to_measure = []
+DISTANCES_TO_MEASURE = []
 ips_to_measure = []
 
 DATACENTERS_LOCATIONS.each do |name, details|
-    distances_to_measure.push(details[:address])
+  DISTANCES_TO_MEASURE.push(details[:address])
     ips_to_measure.push(details[:ip])
 
 end
    
 
-def distances_to_measure(keyword, distances_to_measure)
-  distances_to_measure.map! {|item| "#{keyword} to #{item}"}
+def self.distances_to_measure_method(keyword, distances_to_measure)
+  DISTANCES_TO_MEASURE.map! {|item| "#{keyword} to #{item}"}
+  #puts DISTANCES_TO_MEASURE
 end
 
 
@@ -59,6 +60,6 @@ end
 
 
 
-puts distances_to_measure
+#puts distances_to_measure
 binding.pry
 end
