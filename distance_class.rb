@@ -3,30 +3,16 @@ require 'pry'
 require 'uri'
 
 class DistanceClass
-  attr_reader :distance, :title
+  attr_reader :source, :destination, :distance
 
-
-
-  
-  def self.find_distance(keyword, api_key = ENV['WA_APPID'])
-    keyword = URI.encode(keyword)
-    response = HTTParty.get("http://api.wolframalpha.com/v2/query?input=#{keyword}&appid=#{api_key}")
-
-    distance = response["queryresult"]["pod"][1]["subpod"]["plaintext"]
-    title = response["queryresult"]["pod"][0]["subpod"]["plaintext"]
-
-    DistanceClass.new(title, distance)
-  end
-
-  def initialize(title, distance)
-    distance = distance.delete " miles"
-    @distance = distance.to_i
-    @title = title
+  def initialize(source, destination, distance)
+    @source = source
+    @destination = destination
+    @distance = distance
   end
 
   def to_s
-    puts "#{title} is #{distance} away"
-    distance
+    "#{source} is #{distance} away from #{destination}"
   end
 end
 

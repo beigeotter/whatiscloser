@@ -14,18 +14,10 @@ class DataCenterClass
   }
   #Methods
   DISTANCES_TO_MEASURE = []
-  ips_to_measure = []
 
   DATACENTERS_LOCATIONS.each do |name, details|
     DISTANCES_TO_MEASURE.push(details[:address])
-      ips_to_measure.push(details[:ip])
-
   end
      
-
-  def self.distances_to_measure_method(keyword, distances_to_measure)
-    DISTANCES_TO_MEASURE.map! {|item| "#{keyword} to #{item}"}
-    #puts DISTANCES_TO_MEASURE
-  end
 
 end
