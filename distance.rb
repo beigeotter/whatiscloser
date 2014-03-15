@@ -8,12 +8,10 @@ require './wolfram_distance.rb'
 
 
 #gets the user's location from the command line
-users_location = gets.chomp
+#users_location = gets.chomp
 
 #uses distances_to_measure in the datacenter class to get a list of distances (eg. berlin to New York, New York, United States)
 locations = DataCenterClass::DISTANCES_TO_MEASURE
-
-puts locations
 
 distance_to_each_datacenter = []
 
